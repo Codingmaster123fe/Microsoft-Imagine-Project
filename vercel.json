@@ -1,12 +1,25 @@
 {
   "version": 2,
-  "buildCommand": "cd EduConnect/frontend && npm run build",
-  "outputDirectory": "EduConnect/frontend/build",
-  "installCommand": "cd EduConnect/frontend && npm install",
-  "regions": ["iad1"],
-  "github": {
-    "enabled": true,
-    "autoAlias": true,
-    "autoJobCancelPreviousOnPush": true
-  }
+  "builds": [
+    {
+      "src": "EduConnect/frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
