@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 # EduConnect Vercel Deployment Helper Script
 # This script helps you deploy EduConnect to Vercel
