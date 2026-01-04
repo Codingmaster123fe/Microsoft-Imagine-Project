@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/build",
+  "installCommand": "npm install --prefix frontend && npm install --prefix backend",
+  "env": {
+    "REACT_APP_API_URL": "@react_app_api_url"
+  },
+  "routes": [
+    {
+      "src": "^/api(.*)",
+      "dest": "/api$1"
+    },
+    {
+      "src": "^(?!api/).*",
+      "dest": "frontend/build/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/build/$1",
+      "status": 200
+    }
+  ],
+  "regions": ["iad1"],
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "autoJobCancelPreviousOnPush": true
+  }
+}
