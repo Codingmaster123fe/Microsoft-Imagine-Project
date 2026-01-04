@@ -36,13 +36,15 @@ const App = () => {
         <h2 className="text-5xl md:text-6xl font-bold mb-4">Learn Without Limits</h2>
         <p className="text-xl md:text-2xl mb-4 font-light">AI-powered education for everyone, everywhere</p>
         <p className="text-base md:text-lg mb-10 text-gray-100">Get 24/7 AI tutoring • Connect with global mentors • Access thousands of resources • Track your progress</p>
-        <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
+        <button 
+          onClick={() => document.getElementById('features').scrollIntoView({ behavior: 'smooth' })}
+          className="bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition transform hover:scale-105">
           Get Started Free
         </button>
       </section>
 
       {/* Features Section */}
-      <section className="bg-white py-20">
+      <section id="features" className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <h3 className="text-4xl font-bold text-center mb-16 text-gray-800">Why Choose EduConnect?</h3>
           
